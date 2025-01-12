@@ -1,8 +1,7 @@
 #!/bin/bash
 
 echo -e "\033[1;33m=========================================="
-echo -e "Created by Parsa in OPIran club"
-echo -e "https://t.me/OPIranClub"
+echo -e "Created by Parsa in OPIran club https://t.me/OPIranClub"
 echo -e "Love Iran :)"
 echo -e "==========================================\033[0m"
 
