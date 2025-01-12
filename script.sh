@@ -14,7 +14,7 @@ read -p "Are you running this script on the Iran server? (yes/no): " server_loca
 
 # Update and install necessary packages
 echo "Updating and installing required packages..."
-sudo apt update && sudo apt upgrade -y
+sudo apt update
 sudo apt-get install iproute2 -y
 sudo apt install nano -y
 sudo apt install netplan.io -y
