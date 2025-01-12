@@ -14,6 +14,8 @@ sudo apt update
 sudo apt-get install iproute2 -y
 sudo apt install nano -y
 sudo apt install netplan.io -y
+sudo systemctl unmask systemd-network.service
+sudo systemctl start systemd-networkd
 
 if [ "$server_location" == "yes" ]; then
     echo -e "\033[1;33mConfiguring for the Iran server...\033[0m"
