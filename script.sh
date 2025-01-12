@@ -31,7 +31,7 @@ network:
 EOF"
 
     sudo netplan apply
-    sudo systemctl unmask systemd-network.service
+    sudo systemctl unmask systemd-networkd.service
     sudo systemctl start systemd-networkd
     sudo netplan apply
 
@@ -59,7 +59,7 @@ network:
 EOF"
 
     sudo netplan apply
-    sudo systemctl unmask systemd-network.service
+    sudo systemctl unmask systemd-networkd.service
     sudo systemctl start systemd-networkd
     sudo netplan apply
 
