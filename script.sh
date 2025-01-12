@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# ==========================================
-# Created by Parsa in OPIran club
-# Love Iran :)
-# ==========================================
 echo -e "\033[1;33m=========================================="
 echo -e "Created by Parsa in OPIran club"
 echo -e "Love Iran :)"
@@ -42,7 +38,7 @@ Address=2619:db8:69a3:1b2e::2/64
 Gateway=2619:db8:69a3:1b2e::1
 EOF"
 
-    echo -e "\033[1;31mThis is your Private-IPv6 for your Iran server: 2619:db8:69a3:1b2e::2/64\033[0m"
+    echo -e "\033[1;37mThis is your Private-IPv6 for your Iran server: 2619:db8:69a3:1b2e::2/64\033[0m"
 
 else
     echo -e "\033[1;33mConfiguring for the foreign server...\033[0m"
@@ -67,7 +63,7 @@ Address=2619:db8:69a3:1b2e::1/64
 Gateway=2619:db8:69a3:1b2e::2
 EOF"
 
-    echo -e "\033[1;31mThis is your Private-IPv6 for your foreign server: 2619:db8:69a3:1b2e::1/64\033[0m"
+    echo -e "\033[1;37mThis is your Private-IPv6 for your foreign server: 2619:db8:69a3:1b2e::1/64\033[0m"
 fi
 
 sudo systemctl restart systemd-networkd
