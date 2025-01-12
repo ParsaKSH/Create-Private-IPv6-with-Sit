@@ -3,5 +3,6 @@
 دستور اجرا:
 
 
+```
 sudo bash <(curl -Ls https://raw.githubusercontent.com/bluetiger4511/Create-Private-IPv6-with-Sit/main/script.sh)
-
+```
