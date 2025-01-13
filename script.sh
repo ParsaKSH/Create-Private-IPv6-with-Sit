@@ -7,8 +7,8 @@ echo -e "==========================================\033[0m"
 
 read -p "Please enter the IPv4 address of the Iran server: " iran_ip
 read -p "Please enter the IPv4 address of the foreign server: " foreign_ip
-read -p "Please enter the MTU (press Enter for default 1480): " mtu
-mtu=${mtu:-1480}
+read -p "Please enter the MTU (press Enter for default 1420): " mtu
+mtu=${mtu:-1420}
 
 function ask_yes_no() {
     local prompt=$1
@@ -43,7 +43,7 @@ network:
       local: $iran_ip
       remote: $foreign_ip
       addresses:
-        - 2619:db8:69a3:1b2e::2/64
+        - 2619:db8:85a3:1b2e::2/64
       mtu: $mtu
 EOF"
 
@@ -54,8 +54,8 @@ EOF"
 
     sudo bash -c "cat > /etc/systemd/network/tun0.network <<EOF
 [Network]
-Address=2619:db8:69a3:1b2e::2/64
-Gateway=2619:db8:69a3:1b2e::1
+Address=2619:db8:85a3:1b2e::2/64
+Gateway=2619:db8:85a3:1b2e::::1
 EOF"
 
     echo -e "\033[1;37mThis is your Private-IPv6 for your Iran server: 2619:db8:69a3:1b2e::2\033[0m"
@@ -71,7 +71,7 @@ network:
       local: $foreign_ip
       remote: $iran_ip
       addresses:
-        - 2619:db8:69a3:1b2e::1/64
+        - 2619:db8:85a3:1b2e::1/64
       mtu: $mtu
 EOF"
 
@@ -82,8 +82,8 @@ EOF"
 
     sudo bash -c "cat > /etc/systemd/network/tun0.network <<EOF
 [Network]
-Address=2619:db8:69a3:1b2e::1/64
-Gateway=2619:db8:69a3:1b2e::2
+Address=2619:db8:85a3:1b2e::1/64
+Gateway=2619:db8:85a3:1b2e::2
 EOF"
 
     echo -e "\033[1;37mThis is your Private-IPv6 for your foreign server: 2619:db8:69a3:1b2e::1\033[0m"
