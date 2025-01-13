@@ -7,13 +7,30 @@ echo -e "==========================================\033[0m"
 
 read -p "Please enter the IPv4 address of the Iran server: " iran_ip
 read -p "Please enter the IPv4 address of the foreign server: " foreign_ip
-read -p "Are you running this script on the Iran server? (yes/no): " server_location
+read -p "Please enter the MTU (press Enter for default 1500): " mtu
+mtu=${mtu:-1500}
+
+function ask_yes_no() {
+    local prompt=$1
+    local answer=""
+    while true; do
+        read -p "$prompt (yes/no): " answer
+        if [[ "$answer" == "yes" || "$answer" == "no" ]]; then
+            echo "$answer"
+            break
+        else
+            echo -e "\033[1;31mOnly yes or no allowed.\033[0m"
+        fi
+    done
+}
+
+server_location=$(ask_yes_no "Are you running this script on the Iran server?")
 
 echo -e "\033[1;33mUpdating and installing required packages...\033[0m"
 sudo apt update
 sudo apt-get install iproute2 -y
 sudo apt install nano -y
-sudo apt install netplan.io -
+sudo apt install netplan.io -y
 
 if [ "$server_location" == "yes" ]; then
     echo -e "\033[1;33mConfiguring for the Iran server...\033[0m"
@@ -27,7 +44,7 @@ network:
       remote: $foreign_ip
       addresses:
         - 2619:db8:69a3:1b2e::2/64
-      mtu: 1500
+      mtu: $mtu
 EOF"
 
     sudo netplan apply
@@ -55,7 +72,7 @@ network:
       remote: $iran_ip
       addresses:
         - 2619:db8:69a3:1b2e::1/64
-      mtu: 1500
+      mtu: $mtu
 EOF"
 
     sudo netplan apply
@@ -74,7 +91,7 @@ fi
 
 sudo systemctl restart systemd-networkd
 
-read -p "Operation completed successfully. Please reboot the system. Would you like to reboot the system? (yes/no): " reboot_choice
+reboot_choice=$(ask_yes_no "Operation completed successfully. Please reboot the system?")
 if [ "$reboot_choice" == "yes" ]; then
     echo -e "\033[1;33mRebooting the system...\033[0m"
     sudo reboot
