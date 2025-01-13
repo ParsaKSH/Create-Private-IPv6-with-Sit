@@ -55,7 +55,7 @@ EOF"
     sudo bash -c "cat > /etc/systemd/network/tun0.network <<EOF
 [Network]
 Address=2619:db8:85a3:1b2e::2/64
-Gateway=2619:db8:85a3:1b2e::::1
+Gateway=2619:db8:85a3:1b2e::1
 EOF"
 
     echo -e "\033[1;37mThis is your Private-IPv6 for your Iran server: 2619:db8:69a3:1b2e::2\033[0m"
