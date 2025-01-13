@@ -7,8 +7,8 @@ echo -e "==========================================\033[0m"
 
 read -p "Please enter the IPv4 address of the Iran server: " iran_ip
 read -p "Please enter the IPv4 address of the foreign server: " foreign_ip
-read -p "Please enter the MTU (press Enter for default 1500): " mtu
-mtu=${mtu:-1500}
+read -p "Please enter the MTU (press Enter for default 1480): " mtu
+mtu=${mtu:-1480}
 
 function ask_yes_no() {
     local prompt=$1
