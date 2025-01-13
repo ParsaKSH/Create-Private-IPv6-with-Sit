@@ -1,4 +1,4 @@
-[English](https://github.com/bluetiger4511/Create-Private-IPv6-with-Sit/blob/main/README.md)
+[English](https://github.com/ParsaKSH/Create-Private-IPv6-with-Sit/blob/main/README.md)
 
 
 
@@ -8,5 +8,5 @@
 
 
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/bluetiger4511/Create-Private-IPv6-with-Sit/main/script.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/ParsaKSH/Create-Private-IPv6-with-Sit/main/script.sh)
 ```
