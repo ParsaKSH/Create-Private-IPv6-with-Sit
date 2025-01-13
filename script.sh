@@ -91,7 +91,7 @@ fi
 
 sudo systemctl restart systemd-networkd
 
-reboot_choice=$(ask_yes_no "Operation completed successfully. Please reboot the system?")
+reboot_choice=$(ask_yes_no "Operation completed successfully. Please reboot the system")
 if [ "$reboot_choice" == "yes" ]; then
     echo -e "\033[1;33mRebooting the system...\033[0m"
     sudo reboot
