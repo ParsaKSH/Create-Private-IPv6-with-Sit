@@ -6,7 +6,6 @@ echo -e "Love Iran :)"
 echo -e "==========================================\033[0m"
 
 read -p "Are you running this script on the IRAN server or the FOREIGN server? (IRAN/FOREIGN): " server_location_en
-
 echo -e "\033[1;33mUpdating and installing required packages...\033[0m"
 sudo apt update
 sudo apt-get install iproute2 -y
@@ -68,6 +67,14 @@ Address=2619:db8:85a3:1b2e::$((2*i))/64
 Gateway=2619:db8:85a3:1b2e::$((2*i - 1))
 EOF"
         echo -e "\033[1;37mThis is your Private-IPv6 for IRAN server #$i: 2619:db8:85a3:1b2e::$((2*i))\033[0m"
+    done
+    for (( i=1; i<=$n_server; i++ )); do
+        if (( i % 2 == 1 )); then
+            y=$i
+        else
+            y=$((i+1))
+        fi
+        tunnel_name="tunel0$y"
         sudo ip -6 route add 2619:db8:85a3:1b2e::$y/128 dev $tunnel_name 2>/dev/null
     done
     sudo systemctl restart systemd-networkd
