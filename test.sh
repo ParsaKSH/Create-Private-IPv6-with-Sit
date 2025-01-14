@@ -78,7 +78,7 @@ EOF"
         fi
         tunnel_name="tunel0$y"
         sudo ip link set "$tunnel_name" up
-        sudo ip -6 route replace 2619:db8:85a3:1b2e::$y/128 dev "$tunnel_name"
+        sudo ip -6 route replace 2619:db8:85a3:1b2e::$y/128 dev $tunnel_name
     done
 
     sudo systemctl restart systemd-networkd
