@@ -36,6 +36,7 @@ if [[ "$server_location_en" == "IRAN" || "$server_location_en" == "iran" ]]; the
         read -p "Enter IPv4 of FOREIGN server #$i: " temp_ip
         foreign_ips[i]=$temp_ip
     done
+
     for (( i=1; i<=$n_server; i++ )); do
         if (( i % 2 == 1 )); then
             y=$i
@@ -68,6 +69,7 @@ Gateway=2619:db8:85a3:1b2e::$((2*i - 1))
 EOF"
         echo -e "\033[1;37mThis is your Private-IPv6 for IRAN server #$i: 2619:db8:85a3:1b2e::$((2*i))\033[0m"
     done
+
     for (( i=1; i<=$n_server; i++ )); do
         if (( i % 2 == 1 )); then
             y=$i
@@ -75,8 +77,10 @@ EOF"
             y=$((i+1))
         fi
         tunnel_name="tunel0$y"
-        sudo ip -6 route add 2619:db8:85a3:1b2e::$y/128 dev $tunnel_name 2>/dev/null
+        sudo ip link set "$tunnel_name" up
+        sudo ip -6 route replace 2619:db8:85a3:1b2e::$y/128 dev "$tunnel_name"
     done
+
     sudo systemctl restart systemd-networkd
     reboot_choice=$(ask_yes_no "Operation completed successfully. Please reboot the system")
     if [ "$reboot_choice" == "yes" ]; then
@@ -120,7 +124,8 @@ Gateway=2619:db8:85a3:1b2e::$gateway_for_foreign
 EOF"
     echo -e "\033[1;37mThis is your Private-IPv6 for your FOREIGN server: 2619:db8:85a3:1b2e::$this_server\033[0m"
     sudo systemctl restart systemd-networkd
-    sudo ip -6 route add 2619:db8:85a3:1b2e::$this_server/128 dev tunel0$this_server 2>/dev/null
+    sudo ip link set "tunel0$this_server" up
+    sudo ip -6 route replace 2619:db8:85a3:1b2e::$this_server/128 dev "tunel0$this_server"
     reboot_choice=$(ask_yes_no "Operation completed successfully. Please reboot the system")
     if [ "$reboot_choice" == "yes" ]; then
         echo -e "\033[1;33mRebooting the system...\033[0m"
