@@ -95,7 +95,6 @@ EOF"
     sudo ip link set tunel021 up
     sudo ip -6 route replace 2619:db8:85a3:1b2e::21/128 dev tunel021
     
-    sudo systemctl restart systemd-networkd
     reboot_choice=$(ask_yes_no "Operation completed successfully. Please reboot the system")
     if [ "$reboot_choice" == "yes" ]; then
         echo -e "\033[1;33mRebooting the system...\033[0m"
