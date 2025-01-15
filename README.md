@@ -41,7 +41,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/ParsaKSH/Create-Private-IPv6-w
 - **آی‌دی تلگرام من**: [@ParsaA_KSH](https://t.me/ParsaA_KSH)  
 - **لینک گروه اُپ‌ایران**: [https://t.me/OPIranClub](https://t.me/OPIranClub)  
 
-اگر این اسکریپت برایتان مفید بود، سپاسگزار می‌شوم اگر به پروژه ستاره بدهید ❤️  
+اگر این اسکریپت برایتان مفید بود، ممنون می‌شوم به پروژه ستاره بدهید ❤️  
 
 **حمایت مالی**  
 - **Tron**: TD3vY9Drpo3eLi8z2LtGT9Vp4ESuF2AEgo  
