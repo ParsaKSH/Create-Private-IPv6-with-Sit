@@ -1,4 +1,4 @@
-[English](https://github.com/ParsaKSH/Create-Private-IPv6-with-Sit/blob/main/README.md)
+[English](https://github.com/ParsaKSH/Create-Private-IPv6-with-Sit/blob/main/README-en.md)
 
 
 درودی به وسعت خاکم ایران!  
