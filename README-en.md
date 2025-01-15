@@ -1,4 +1,4 @@
-[فارسی](https://github.com/ParsaKSH/Create-Private-IPv6-with-Sit/blob/main/README-fa.md)
+[فارسی](https://github.com/ParsaKSH/Create-Private-IPv6-with-Sit/blob/main/README.md)
 
 
 
