@@ -139,7 +139,7 @@ EOF"
     echo -e "\033[1;37mThis is your Private-IPv6 for your FOREIGN server: 2619:db8:85a3:1b2e::$this_server\033[0m"
     sudo systemctl restart systemd-networkd
     sudo ip link set "tunel0$this_server" up
-    sudo ip -6 route replace 2619:db8:85a3:1b2e::$this_server/128 dev "tunel0$this_server"
+    sudo ip -6 route replace 2619:db8:85a3:1b2e::$this_server/128 dev "tunel01"
     reboot_choice=$(ask_yes_no "Operation completed successfully. Please reboot the system")
     if [ "$reboot_choice" == "yes" ]; then
         echo -e "\033[1;33mRebooting the system...\033[0m"
