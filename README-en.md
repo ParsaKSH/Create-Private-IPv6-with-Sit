@@ -43,8 +43,3 @@ If you have any questions or issues, feel free to tag me in the OPIran group on 
 
 If you found this script helpful, giving a star to the project would be greatly appreciated ❤️  
 
-**Support**  
-- **TRON**: TD3vY9Drpo3eLi8z2LtGT9Vp4ESuF2AEgo  
-- **USDT**: UQAm3obHuD5kWf4eE4JmAO_5rkQdZPhaEpmRWs6Rk8vGQJog  
-- **TON**: bc1qaquv5vg35ua7qnd3wlueytw0fugpn8qkkuq9r2  
-- **BTC**: 0x800680F566A394935547578bc5599D98B139Ea22
